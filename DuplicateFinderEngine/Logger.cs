@@ -24,7 +24,7 @@ namespace DuplicateFinderEngine
         public void Info(string text)
         {
             LogEntries.Add(new LogItem { DateTime = DateTime.Now.ToString("HH:mm:ss"), Message = text});
-            LogItemAdded?.Invoke(null,new EventArgs());
+            LogItemAdded?.Invoke(this, new EventArgs());
         }
         public ConcurrentBag<LogItem> LogEntries { get; internal set; } = new ConcurrentBag<LogItem>();
     }

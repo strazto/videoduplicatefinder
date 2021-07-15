@@ -61,6 +61,7 @@ namespace DuplicateFinderWeb.Controllers
 		{
 			_L.LogInformation("Scan Finished");
 			Duplicates = new List<DuplicateFinderEngine.Data.DuplicateItem>(Scanner.Duplicates);
+			Session.Scanner.PopulateDuplicateThumbnails();
 		}
 
 		private static void Scanner_Progress(object sender, ScanEngine.OwnScanProgress e)

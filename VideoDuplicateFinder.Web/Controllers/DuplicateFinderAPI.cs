@@ -209,23 +209,20 @@ namespace DuplicateFinderWeb.Controllers
 
 		// Delete Condition paths
 
-		public class DeleteBody {
-			public List<string> Paths { get; set; }
-			public bool ClearAll { get; set; }
-		}
+
 
 
 		[HttpDelete("include/path")]
-		public async Task<IActionResult> DeleteIncludePaths([FromBody] DeleteBody req) {
+		public async Task<IActionResult> DeleteIncludePaths([FromBody] Data.DeleteBody req) {
 			return await deleteConditionPaths(req, Scanner.Settings.IncludeList);
 		}
 
 		[HttpDelete("exclude/path")]
-		public async Task<IActionResult> DeleteExcludePaths([FromBody] DeleteBody req) {
+		public async Task<IActionResult> DeleteExcludePaths([FromBody] Data.DeleteBody req) {
 			return await deleteConditionPaths(req, Scanner.Settings.BlackList);
 		}
 
-		private async Task<IActionResult> deleteConditionPaths(DeleteBody req, HashSet<string> conditionList) {
+		private async Task<IActionResult> deleteConditionPaths(Data.DeleteBody req, HashSet<string> conditionList) {
 			if (req.ClearAll) {
 				conditionList.Clear();
 				return NoContent();
@@ -234,48 +231,18 @@ namespace DuplicateFinderWeb.Controllers
 			return NoContent();
 		}
 		
-		public class SettingsRequestBody {
-			public bool? IncludeReadOnlyFolders { get; set; }
-			public bool? IncludeSubDirectories  { get; set; }
-			public bool? IncludeImages { get; set; }
-			public byte? Threshhold { get; set; }
-			public float? Percent { get; set; }
-			public int? ThumbnailCount { get; set; }
 
-
-			public SettingsRequestBody() {
-
-			}
-			public SettingsRequestBody(DuplicateFinderEngine.Settings s) {
-				IncludeReadOnlyFolders = !s.IgnoreReadOnlyFolders;
-				IncludeSubDirectories  = s.IncludeSubDirectories;
-				IncludeImages          = s.IncludeImages;
-				Threshhold             = s.Threshhold;
-				Percent                = s.Percent;
-				ThumbnailCount         = s.ThumbnailCount;
-			}
-
-			public static void CopyToSettings(SettingsRequestBody body, DuplicateFinderEngine.Settings s)
-			{
-				if (body.IncludeReadOnlyFolders != null) s.IgnoreReadOnlyFolders = !body.IncludeReadOnlyFolders ?? true;
-				if (body.IncludeImages != null) s.IncludeImages = body.IncludeImages ?? true;
-				if (body.IncludeSubDirectories != null) s.IncludeSubDirectories = body.IncludeSubDirectories ?? true;
-				if (body.Threshhold != null) s.Threshhold = body.Threshhold ?? 5;
-				if (body.Percent != null) s.Percent = body.Percent ?? 96f;
-				if (body.ThumbnailCount != null) s.ThumbnailCount = body.ThumbnailCount ?? 1;
-			}
-		}
 
 		[HttpPost("")]
-		public async Task<ActionResult<SettingsRequestBody>> AddSettings([FromBody] SettingsRequestBody body)
+		public async Task<ActionResult<Data.SettingsRequestBody>> AddSettings([FromBody] Data.SettingsRequestBody body)
 		{
-			SettingsRequestBody.CopyToSettings(body, Scanner.Settings);
+			Data.SettingsRequestBody.CopyToSettings(body, Scanner.Settings);
 
 			return await GetSettings();
 		}
 
 		[HttpGet("")]
-		public async Task<ActionResult<SettingsRequestBody>> GetSettings() => new SettingsRequestBody(Scanner.Settings);
+		public async Task<ActionResult<Data.SettingsRequestBody>> GetSettings() => new Data.SettingsRequestBody(Scanner.Settings);
 
 
 	}

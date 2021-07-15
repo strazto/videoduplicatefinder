@@ -11,8 +11,10 @@ COPY VideoDuplicateFinder.Web/  VideoDuplicateFinder.Web/
 COPY DuplicateFinderEngine/  DuplicateFinderEngine/
 RUN dotnet publish -c Release --no-self-contained -o out VideoDuplicateFinder.Web
 
+
 FROM mcr.microsoft.com/dotnet/aspnet:3.1-alpine
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main ffmpeg && \
+	apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing libgdiplus
 WORKDIR /app
 COPY --from=build-env /app/out .
-RUN ls -l /app
 ENTRYPOINT [ "dotnet", "VideoDuplicateFinder.Web.dll" ]

@@ -9,16 +9,18 @@ namespace DuplicateFinderWeb.Controllers {
 	public class ScanController : ControllerBase {
 		private ScanEngine Scanner;
 		private readonly ILogger<ScanController> _logger;
+		private Session session = Session.Instance;
+
 		private ILogger<ScanController> _L { get => _logger ; }
 
 		public ScanEngine.OwnScanProgress Progress {
-			get => Session.Progress;
-			set => Session.Progress = value;
+			get => session.Progress;
+			set => session.Progress = value;
 		}
 
 		public ScanController(ILogger<ScanController> logger) {
 			_logger = logger;
-			Scanner = Session.Scanner;
+			Scanner = session.Scanner;
 		}
 
 		[HttpGet("")]

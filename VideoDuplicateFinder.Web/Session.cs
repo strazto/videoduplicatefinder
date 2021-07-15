@@ -7,28 +7,30 @@ using System.Text.Json;
 
 namespace DuplicateFinderWeb.Controllers {
 	// This is an anti-pattern for creating persistence, I just wanted a fast PoC though.
-	public static class Session {
-		private static ScanEngine _scanner;
-		public static ScanEngine Scanner { get => _scanner; }
+	public class Session {
+		public static Session Instance { get; } = new Session();
+		
+		private ScanEngine _scanner;
+		public ScanEngine Scanner { get => _scanner; }
 
-		private static ILogger _L { get; set; } = NullLogger.Instance;
+		private ILogger _L { get; set; } = NullLogger.Instance;
 
-		public static void SetLogger(ILogger logger) {
+		public void SetLogger(ILogger logger) {
 			_L = logger;
 			_L.LogInformation("Logger set to {logger}", logger);
 		}
-		private static List<DuplicateFinderEngine.Data.DuplicateItem> _duplicates;
-		public static List<DuplicateFinderEngine.Data.DuplicateItem> Duplicates {
+		private  List<DuplicateFinderEngine.Data.DuplicateItem> _duplicates;
+		public  List<DuplicateFinderEngine.Data.DuplicateItem> Duplicates {
 			get => _duplicates;
 			set {
 				_duplicates = value;
 			}
 		}
 
-		private static ScanEngine.OwnScanProgress _progress;
-		public static ScanEngine.OwnScanProgress Progress { get => _progress; set => _progress = value; }
+		private  ScanEngine.OwnScanProgress _progress;
+		public  ScanEngine.OwnScanProgress Progress { get => _progress; set => _progress = value; }
 
-		static Session()
+		public Session()
 		{
 			_scanner = new ScanEngine();
 
@@ -46,21 +48,21 @@ namespace DuplicateFinderWeb.Controllers {
 			Logger.Instance.LogItemAdded += Instance_LogItemAdded;
 
 		}
-		private static void Instance_LogItemAdded(object sender, EventArgs e)  {
+		private void Instance_LogItemAdded(object sender, EventArgs e)  {
 			while (Logger.Instance.LogEntries.Count > 0) {
 				if (Logger.Instance.LogEntries.TryTake(out var item))
 					_L.LogInformation("{LogItem}", item);
 			}
 		}
 
-		private static void Scanner_ScanDone(object sender, EventArgs e)
+		private void Scanner_ScanDone(object sender, EventArgs e)
 		{
 			_L.LogInformation("Scan Finished");
 			Duplicates = new List<DuplicateFinderEngine.Data.DuplicateItem>(Scanner.Duplicates);
-			Session.Scanner.PopulateDuplicateThumbnails();
+			Scanner.PopulateDuplicateThumbnails();
 		}
 
-		private static void Scanner_Progress(object sender, ScanEngine.OwnScanProgress e)
+		private void Scanner_Progress(object sender, ScanEngine.OwnScanProgress e)
 		{
 			_L.LogInformation(
 				"Progress Update: {CurrentPosition}\t{Elapsed} / {Remaining}\t{CurrentFile}", 
@@ -69,7 +71,7 @@ namespace DuplicateFinderWeb.Controllers {
 			Progress = e;
 		}
 
-		private static void Scanner_FilesEnumerated(object sender, EventArgs e)
+		private void Scanner_FilesEnumerated(object sender, EventArgs e)
 		{
 			_L.LogInformation("Files Enumerated");
 		}

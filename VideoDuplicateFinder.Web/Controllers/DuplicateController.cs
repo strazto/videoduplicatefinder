@@ -8,10 +8,11 @@ namespace DuplicateFinderWeb.Controllers {
 	[Route("api/[controller]")]
 	public class DuplicateController : ControllerBase {
 		private ScanEngine Scanner;
+		private Session session = Session.Instance;
 
 		public List<DuplicateFinderEngine.Data.DuplicateItem> Duplicates {
-			get => Session.Duplicates;
-			set => Session.Duplicates = value;
+			get => session.Duplicates;
+			set => session.Duplicates = value;
 		}
 
 		private readonly ILogger<DuplicateController> _logger;
@@ -19,7 +20,7 @@ namespace DuplicateFinderWeb.Controllers {
         public DuplicateController(ILogger<DuplicateController> logger)
         {
             _logger = logger;
-			Scanner = Session.Scanner;
+			Scanner = session.Scanner;
         }
 
 

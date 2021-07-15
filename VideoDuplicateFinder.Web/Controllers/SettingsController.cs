@@ -11,6 +11,8 @@ namespace DuplicateFinderWeb.Controllers {
 	public class SettingsController : ControllerBase {
 		private ScanEngine Scanner;
 		private readonly ILogger<SettingsController> _logger;
+		private Session session = Session.Instance;
+
 		private ILogger<SettingsController> _L { get => _logger; }
 
 		public static T GetPropertyValue<T>(object obj, string propName) { return (T)obj.GetType().GetProperty(propName).GetValue(obj, null); }
@@ -33,7 +35,7 @@ namespace DuplicateFinderWeb.Controllers {
 
 		public SettingsController(ILogger<SettingsController> logger) {
 			_logger = logger;
-			Scanner = Session.Scanner;
+			Scanner = session.Scanner;
 		}
 
 		// Get Condition Paths

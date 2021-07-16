@@ -313,7 +313,11 @@ namespace DuplicateFinderEngine {
 					var b = ffMpeg.GetVideoThumbnail(videoFile.Path, Convert.ToSingle(videoFile.Duration.TotalSeconds * positionList[i]), false);
 					if (b == null || b.Length == 0) return null;
 					using var byteStream = new MemoryStream(b);
-					var bitmapImage = Image.FromStream(byteStream);
+
+					// When opening an image from a stream, the image can only
+					// persist while the stream is open. 
+					// To work around this, clone that image to a new bitmap.
+					var bitmapImage = new Bitmap(Image.FromStream(byteStream));
 					images.Add(bitmapImage);
 				}
 			}

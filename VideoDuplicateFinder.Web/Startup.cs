@@ -24,7 +24,12 @@ namespace DuplicateFinderWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson();
+            services
+				.AddControllers(options => {
+					options.OutputFormatters.Insert(
+						0, new Data.Formatters.ImageOutputFormatter());
+				})
+				.AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

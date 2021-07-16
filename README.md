@@ -41,7 +41,27 @@ Video Duplicate Finder is licensed under GPLv3
 Video Duplicate Finder uses ffmpeg / ffprobe (not included) which is licesed under LGPL 2.1 / GPL v2
 
 
-# Compiling
-- Daily .NET Core 3.x SDK builds https://github.com/dotnet/core-setup#daily-builds
-- Visual Studio 2019
-- For Linux: Avalonia
+# Compiling / Building
+
+- You need the `dotnet` SDK, at least `3.x`, `5.x` is probably okay too
+  - Daily .NET Core 3.x SDK builds https://github.com/dotnet/core-setup#daily-builds
+- Linux:
+  - Linux builds require the Avalonia NuGet package to provide support for GUI programming. `dotnet restore` should take care of this.
+
+## Build Script
+
+A bash script that builds every distribution, `build.sh` is provided. If your development machine is windows, you'll need to use Cygwin to run it.
+
+If your development machine is *nix, you won't be able to target Windows.
+
+## Docker
+
+A dockerfile, `compose.yml` spec, & a sample `compose.override.yml` spec have been provided for the webapp.
+
+Running `docker-compose up` will launch the webservice, listening on `localhost:5000`, as well as a seq logging server, running on `localhost:9080`
+
+
+# Development
+
+- Visual Studio 2019 is a very nice IDE, but not strictly necessary.
+

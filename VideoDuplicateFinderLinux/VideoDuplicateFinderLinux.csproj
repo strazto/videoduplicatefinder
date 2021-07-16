@@ -12,16 +12,9 @@
     <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-<!--
-    <AvaloniaResource Include="**\*.xaml">
-      <SubType>Designer</SubType>
-    </AvaloniaResource>
-    <AvaloniaResource Include="Assets\*"/>
--->
     <EmbeddedResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
   </ItemGroup>
   <ItemGroup>
     <None Remove="MessageBoxView.xaml" />
@@ -62,8 +55,5 @@
     <None Update="DuplicateViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Theme\Converters\" />
   </ItemGroup>
 </Project>

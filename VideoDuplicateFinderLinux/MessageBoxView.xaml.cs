@@ -22,7 +22,8 @@ namespace VideoDuplicateFinderLinux {
 
 	public class MessageBoxView : Window {
 		public MessageBoxView() : this("") {
-			
+			// TODO: Flag for removal - Purpose Unclear
+			// See: https://github.com/0x90d/videoduplicatefinder/pull/96#discussion_r483171620
 		}
 
 		public MessageBoxView(string message, MessageBoxButtons buttons = MessageBoxButtons.Ok, string title = null) {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using Avalonia.Media.Imaging;
 
-namespace VideoDuplicateFinderLinux {
+namespace VideoDuplicateFinder.gui {
 	static class Utils {
 		public static string ThumbnailDirectory => DuplicateFinderEngine.Utils.SafePathCombine(Path.GetDirectoryName(typeof(MainWindow).Assembly.Location), "Thumbnails");
 		public static Bitmap JoinImages(List<System.Drawing.Image> pImgList) {

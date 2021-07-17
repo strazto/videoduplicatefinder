@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace VideoDuplicateFinderLinux {
+namespace VideoDuplicateFinder.gui {
 	public class MainWindow : Window {
 		public MainWindow() {
 			InitializeComponent();

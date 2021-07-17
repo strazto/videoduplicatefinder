@@ -1,9 +1,9 @@
 <Window
-    x:Class="VideoDuplicateFinderLinux.MainWindow" xmlns="https://github.com/avaloniaui"
+    x:Class="VideoDuplicateFinder.gui.MainWindow" xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:duplicateFinderEngine="clr-namespace:DuplicateFinderEngine;assembly=DuplicateFinderEngine"
-    xmlns:local="clr-namespace:VideoDuplicateFinderLinux"
-    xmlns:mvvm="clr-namespace:VideoDuplicateFinderLinux.MVVM.Converters"
+    xmlns:local="clr-namespace:VideoDuplicateFinder.gui"
+    xmlns:mvvm="clr-namespace:VideoDuplicateFinder.gui.MVVM.Converters"
     Title="Video Duplicate Finder 2.0 - Cross-platform"
     Width="900"
     Height="750"

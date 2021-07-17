@@ -18,7 +18,7 @@ using DynamicData.Binding;
 using System.Reactive;
 using System.Diagnostics;
 
-namespace VideoDuplicateFinderLinux {
+namespace VideoDuplicateFinder.gui {
 	public sealed class MainWindowVM : ReactiveObject {
 
 		public ScanEngine Scanner { get; } = new ScanEngine();

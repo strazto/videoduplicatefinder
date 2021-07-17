@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuplicateFinderEngine", "Du
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoDuplicateFinder.Console", "VideoDuplicateFinder.Console\VideoDuplicateFinder.Console.csproj", "{B2048B76-21C3-4C40-8F42-0B18F1F61540}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoDuplicateFinderLinux", "VideoDuplicateFinderLinux\VideoDuplicateFinderLinux.csproj", "{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDuplicateFinder.Web", "VideoDuplicateFinder.Web\VideoDuplicateFinder.Web.csproj", "{21FD4237-2C93-4C2C-ABB4-0D571502CD9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDuplicateFinder.Linux", "VideoDuplicateFinder.Linux\VideoDuplicateFinder.Linux.csproj", "{F409EBD1-E708-4398-99D6-00A63CD080C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,14 +45,6 @@ Global
 		{B2048B76-21C3-4C40-8F42-0B18F1F61540}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B2048B76-21C3-4C40-8F42-0B18F1F61540}.Release|x64.ActiveCfg = Release|Any CPU
 		{B2048B76-21C3-4C40-8F42-0B18F1F61540}.Release|x64.Build.0 = Release|Any CPU
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Debug|x64.ActiveCfg = Debug|x64
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Debug|x64.Build.0 = Debug|x64
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Release|x64.ActiveCfg = Release|x64
-		{E6C3460C-ECAE-42CF-B6B7-EA665E142F89}.Release|x64.Build.0 = Release|x64
 		{21FD4237-2C93-4C2C-ABB4-0D571502CD9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{21FD4237-2C93-4C2C-ABB4-0D571502CD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21FD4237-2C93-4C2C-ABB4-0D571502CD9A}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -61,6 +53,14 @@ Global
 		{21FD4237-2C93-4C2C-ABB4-0D571502CD9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21FD4237-2C93-4C2C-ABB4-0D571502CD9A}.Release|x64.ActiveCfg = Release|Any CPU
 		{21FD4237-2C93-4C2C-ABB4-0D571502CD9A}.Release|x64.Build.0 = Release|Any CPU
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Debug|x64.ActiveCfg = Debug|x64
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Debug|x64.Build.0 = Debug|x64
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Release|x64.ActiveCfg = Release|x64
+		{F409EBD1-E708-4398-99D6-00A63CD080C7}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,9 +25,6 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.12" />
     <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.9.9" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DuplicateFinderEngine\DuplicateFinderEngine.csproj" />
   </ItemGroup>  
   <ItemGroup>
     <Compile Update="MessageBoxView.xaml.cs">
@@ -55,5 +52,8 @@
     <None Update="DuplicateViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DuplicateFinderEngine\DuplicateFinderEngine.csproj" />
   </ItemGroup>
 </Project>

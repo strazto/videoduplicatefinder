@@ -6,7 +6,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using ReactiveUI;
 
-namespace VideoDuplicateFinderLinux {
+namespace VideoDuplicateFinder.gui {
 
 	public static class MessageBoxService {
 		public static async Task<MessageBoxButtons> Show(string message, MessageBoxButtons buttons = MessageBoxButtons.Ok,

@@ -4,7 +4,7 @@ using System.ComponentModel;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 
-namespace VideoDuplicateFinderLinux
+namespace VideoDuplicateFinder.gui
 {
     public class DuplicateItemViewModel : ReactiveObject, IEquatable<DuplicateItemViewModel>
     {

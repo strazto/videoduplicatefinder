@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace VideoDuplicateFinderLinux
+namespace VideoDuplicateFinder.gui
 {
     public sealed class DuplicateItemComparer : IComparer<DuplicateItemViewModel>
     {

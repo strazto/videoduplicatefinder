@@ -5,7 +5,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Logging.Serilog;
 using Avalonia.Markup.Xaml;
 
-namespace VideoDuplicateFinderLinux
+namespace VideoDuplicateFinder.gui
 {
     public class App : Application
     {

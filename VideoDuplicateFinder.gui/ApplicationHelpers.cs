@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 
-namespace VideoDuplicateFinderLinux {
+namespace VideoDuplicateFinder.gui {
 	static class ApplicationHelpers {
 		public static IClassicDesktopStyleApplicationLifetime CurrentApplicationLifetime =>
 			(IClassicDesktopStyleApplicationLifetime)Application.Current.ApplicationLifetime;

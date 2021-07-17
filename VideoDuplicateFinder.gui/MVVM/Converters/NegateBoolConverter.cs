@@ -2,7 +2,7 @@ using Avalonia.Data.Converters;
 using System;
 using System.Globalization;
 
-namespace VideoDuplicateFinderLinux.MVVM.Converters
+namespace VideoDuplicateFinder.gui.MVVM.Converters
 {
     public class NegateBoolConverter : IValueConverter
 

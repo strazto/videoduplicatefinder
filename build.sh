@@ -59,25 +59,17 @@ function publish {
 
 # Publish for windows
 
-PLATFORM=win-x64
-PROJECTS=("VideoDuplicateFinder.Windows" "VideoDuplicateFinder.Web" "VideoDuplicateFinder.Console")
 BASE_DIR="Releases"
+PLATFORMS=(win-x64 linux-x64 osx.10.11-x64)
+PROJECTS=("VideoDuplicateFinder.gui" "VideoDuplicateFinder.Web" "VideoDuplicateFinder.Console")
 
 rm -r $BASE_DIR/VDF*
 
-for project in ${PROJECTS[@]}; do
-	echo "========== ${project}-${PLATFORM} ============================"
-	publish "$PLATFORM" "$project" "$BASE_DIR"
-done
-
-# Publish for linux
-
-PLATFORM=linux-x64
-PROJECTS=("VideoDuplicateFinderLinux" "VideoDuplicateFinder.Web" "VideoDuplicateFinder.Console")
-
-for project in ${PROJECTS[@]}; do
-	echo "========== ${project}-${PLATFORM} ============================"
-	publish "$PLATFORM" "$project" "$BASE_DIR"
+for PLATFORM in ${PLATFORMS[@]}; do
+	for project in ${PROJECTS[@]}; do
+		echo "========== ${project}-${PLATFORM} ============================"
+		publish "$PLATFORM" "$project" "$BASE_DIR"
+	done
 done
 
 # Zip each project

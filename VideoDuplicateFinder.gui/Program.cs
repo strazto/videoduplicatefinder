@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Logging.Serilog;
 using Avalonia.ReactiveUI;
 
-namespace VideoDuplicateFinderLinux {
+namespace VideoDuplicateFinder.gui {
 	class Program {
 		static void Main(string[] args) => BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
 

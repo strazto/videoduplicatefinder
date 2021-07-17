@@ -73,7 +73,7 @@ done
 # Publish for linux
 
 PLATFORM=linux-x64
-PROJECTS=("VideoDuplicateFinderLinux" "VideoDuplicateFinder.Web" "VideoDuplicateFinder.Console")
+PROJECTS=("VideoDuplicateFinder.Linux" "VideoDuplicateFinder.Web" "VideoDuplicateFinder.Console")
 
 for project in ${PROJECTS[@]}; do
 	echo "========== ${project}-${PLATFORM} ============================"

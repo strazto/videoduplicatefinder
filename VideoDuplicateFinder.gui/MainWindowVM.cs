@@ -47,6 +47,12 @@ namespace VideoDuplicateFinder.gui {
 			set => this.RaiseAndSetIfChanged(ref _IsScanning, value);
 		}
 
+		bool _IsPaused;
+		public bool IsPaused {
+			get => _IsPaused;
+			set => this.RaiseAndSetIfChanged(ref _IsPaused, value);
+		}
+
 		bool _IgnoreReadOnlyFolders;
 		public bool IgnoreReadOnlyFolders {
 			get => _IgnoreReadOnlyFolders;
@@ -123,8 +129,30 @@ namespace VideoDuplicateFinder.gui {
 			//Ensure items added before GUI was ready will be shown 
 			Instance_LogItemAdded(null, null);
 
+			CanStart = this
+				.WhenAnyValue(
+					x => x.IsScanning, x => x.IsPaused,
+					(scanning, paused) => !scanning && !paused
+					);
+
+			CanStop = this
+				.WhenAnyValue(x => x.IsScanning);
+
+			CanResume = this
+				.WhenAnyValue(x => x.IsPaused);
+
+			CanPause = this
+				.WhenAnyValue(
+					x => x.IsScanning, x => x.IsPaused,
+					(scanning, paused) => scanning && !paused
+					);
 		}
 
+		public readonly IObservable<bool> CanStart;
+		public readonly IObservable<bool> CanPause;
+		public readonly IObservable<bool> CanStop;
+		public readonly IObservable<bool> CanResume;
+		
 		private void Scanner_ThumbnailsPopulated(object sender, EventArgs e) {
 			//Reset properties
 			ScanProgressText = string.Empty;
@@ -340,7 +368,25 @@ namespace VideoDuplicateFinder.gui {
 			IsBusy = true;
 			IsBusyText = Properties.Resources.EnumeratingFiles;
 			Scanner.StartSearch();
-		});
+		}, CanStart);
+
+		public ReactiveCommand<Unit, Unit> StopScanCommand => ReactiveCommand.CreateFromTask(async () => {
+			
+			IsScanning = false;
+			Scanner.Stop();
+			Scanner.Duplicates.Clear();
+		}, CanStop);
+
+		public ReactiveCommand<Unit, Unit> PauseScanCommand => ReactiveCommand.CreateFromTask(async () => {
+			IsPaused = true;
+			Scanner.Pause();
+		}, CanPause);
+
+		public ReactiveCommand<Unit, Unit> ResumeScanCommand => ReactiveCommand.CreateFromTask(async () => {
+			IsPaused = false;
+			Scanner.Resume();
+		}, CanResume);
+
 		public ReactiveCommand<Unit, Unit> CheckWhenIdenticalCommand => ReactiveCommand.Create(() => {
 			var blackListGroupID = new HashSet<Guid>();
 			duplicateList.Edit(updater => {

@@ -40,7 +40,7 @@
                         Grid.Row="0"
                         MinHeight="30"
                         Background="#F0F0F0">
-                        <MenuItem VerticalAlignment="Center" Command="{Binding StartScanCommand}">
+                        <MenuItem VerticalAlignment="Center" Command="{Binding StartScanCommand}" IsVisible="{Binding IsScanning, Converter={StaticResource NegateBool}}">
                             <MenuItem.Header>
                                 <StackPanel Orientation="Horizontal">
                                     <Viewbox Width="20" Height="20">

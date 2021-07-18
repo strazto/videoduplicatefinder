@@ -1,6 +1,6 @@
 # VideoDuplicate Finder
 
-## v2.0.8.9xxx
+## v2.1.0
 
 ### Meta:
 
@@ -43,8 +43,9 @@
 
 #### Updates
 
-* Update Avalonia packages to `0.10.6`.
-* Add OSX build
+- Update Avalonia packages to `0.10.6`.
+- Add OSX build
+- Bring to parity with WPF version, as much as I can tell :)
 
 #### Fixes
 

@@ -48,4 +48,5 @@
 
 #### Fixes
 
+- Fix pause/resume/cancel controls not working [#21](https://github.com/matthewstrasiotto/videoduplicatefinder/issues/21)
 - Fix linux build by upgrading Avalonia dependency. [#10](https://github.com/matthewstrasiotto/videoduplicatefinder/pull/10), [0x90d/videoduplicatefinder#96](https://github.com/0x90d/videoduplicatefinder/pull/96) (@mimran1980)

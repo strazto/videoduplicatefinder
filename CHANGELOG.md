@@ -2,9 +2,15 @@
 
 ## v2.0.8.9xxx
 
-### Misc
+### Meta:
 
-Update build script
+#### Build Script:
+
+* Consolidate build scripts to single bash script
+* Remove VDF.Windows from build script
+* Target Avalonia gui at all platforms
+* Add OSX to build script
+* Add VDF.Web to build script
 
 ### NEW: Add webserver version.
 
@@ -33,9 +39,13 @@ Update build script
 
 - Fix log outputs not displaying [#9](https://github.com/matthewstrasiotto/videoduplicatefinder/pull/9), [0x90d/videoduplicatefinder#17](https://github.com/0x90d/videoduplicatefinder/pull/117) (@obs1dium)
 
-### Linux
+### Avalonia
+
+#### Updates
+
+* Update Avalonia packages to `0.10.6`.
+* Add OSX build
 
 #### Fixes
 
 - Fix linux build by upgrading Avalonia dependency. [#10](https://github.com/matthewstrasiotto/videoduplicatefinder/pull/10), [0x90d/videoduplicatefinder#96](https://github.com/0x90d/videoduplicatefinder/pull/96) (@mimran1980)
-

@@ -1,5 +1,4 @@
 using Avalonia;
-using Avalonia.Logging.Serilog;
 using Avalonia.ReactiveUI;
 
 namespace VideoDuplicateFinder.gui {
@@ -9,6 +8,6 @@ namespace VideoDuplicateFinder.gui {
 		public static AppBuilder BuildAvaloniaApp()
 			=> AppBuilder.Configure<App>()
 				.UsePlatformDetect().UseReactiveUI()
-				.LogToDebug();
+				.LogToTrace();
 	}
 }

@@ -116,6 +116,25 @@ namespace VideoDuplicateFinder.gui {
 			get => _Thumbnails;
 			set => this.RaiseAndSetIfChanged(ref _Thumbnails, value);
 		}
+
+		int _TotalGroups;
+		public int TotalGroups {
+			get => _TotalGroups;
+			set => this.RaiseAndSetIfChanged(ref _TotalGroups, value);
+		}
+
+		int _TotalDuplicates;
+		public int TotalDuplicates {
+			get => _TotalDuplicates;
+			set => this.RaiseAndSetIfChanged(ref _TotalDuplicates, value);
+		}
+
+		long _TotalSize;
+		public long TotalSize {
+			get => _TotalSize;
+			set => this.RaiseAndSetIfChanged(ref _TotalSize, value);
+		}
+
 		public MainWindowVM() {
 			var dir = new DirectoryInfo(Utils.ThumbnailDirectory);
 			if (!dir.Exists)
@@ -233,6 +252,11 @@ namespace VideoDuplicateFinder.gui {
 
 		private void Scanner_ScanDone(object sender, EventArgs e) {
 			Scanner.PopulateDuplicateThumbnails();
+
+			//Status bar information
+			TotalGroups = Scanner.Duplicates.GroupBy(a => a.GroupId).Count();
+			TotalSize = Scanner.Duplicates.Sum(a => a.SizeLong);
+			TotalDuplicates = Scanner.Duplicates.Count;
 
 			var dupGroupHandled = new HashSet<Guid>();
 			foreach (var itm in Scanner.Duplicates) {

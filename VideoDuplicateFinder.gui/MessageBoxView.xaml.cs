@@ -19,10 +19,10 @@ namespace VideoDuplicateFinder.gui {
 
 
 	public class MessageBoxView : Window {
-		public MessageBoxView() : this("") {
-			// TODO: Flag for removal - Purpose Unclear
-			// See: https://github.com/0x90d/videoduplicatefinder/pull/96#discussion_r483171620
-		}
+		// Needed as empty public constuctor is expected 
+		// Severity	Code	Description	Project	File
+		// Error XAMLIL  Unable to find public constructor for type VideoDuplicateFinder.gui:VideoDuplicateFinder.gui.MessageBoxView()
+		public MessageBoxView() : this("") { }
 
 		public MessageBoxView(string message, MessageBoxButtons buttons = MessageBoxButtons.Ok, string title = null) {
 

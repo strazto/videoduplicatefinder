@@ -11,9 +11,7 @@ namespace VideoDuplicateFinder.gui {
 	public static class MessageBoxService {
 		public static async Task<MessageBoxButtons> Show(string message, MessageBoxButtons buttons = MessageBoxButtons.Ok,
 			string title = null) {
-			var dlg = new MessageBoxView(message, buttons, title) {
-				Owner = ApplicationHelpers.MainWindow
-			};
+			var dlg = new MessageBoxView(message, ApplicationHelpers.MainWindow, buttons, title);
 			return await dlg.ShowDialog<MessageBoxButtons>(ApplicationHelpers.MainWindow);
 		}
 		
@@ -21,10 +19,10 @@ namespace VideoDuplicateFinder.gui {
 
 
 	public class MessageBoxView : Window {
-		public MessageBoxView() : this("") {
-			// TODO: Flag for removal - Purpose Unclear
-			// See: https://github.com/0x90d/videoduplicatefinder/pull/96#discussion_r483171620
-		}
+		// Needed as empty public constuctor is expected 
+		// Severity	Code	Description	Project	File
+		// Error XAMLIL  Unable to find public constructor for type VideoDuplicateFinder.gui:VideoDuplicateFinder.gui.MessageBoxView()
+		public MessageBoxView() : this("") { }
 
 		public MessageBoxView(string message, MessageBoxButtons buttons = MessageBoxButtons.Ok, string title = null) {
 
@@ -43,6 +41,11 @@ namespace VideoDuplicateFinder.gui {
 			this.AttachDevTools();
 #endif
 
+		}
+
+		// Owner { set } is protected in Avalonia 0.10.6 , so have to add explicit constructor to set owner for messageboxes.
+		public MessageBoxView(string message, Window owner, MessageBoxButtons buttons = MessageBoxButtons.Ok, string title = null) : this(message, buttons, title) {
+			Owner = owner;
 		}
 		private void InitializeComponent() {
 			AvaloniaXamlLoader.Load(this);

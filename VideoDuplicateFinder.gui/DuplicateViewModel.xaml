@@ -2,7 +2,8 @@
              
     x:Class="VideoDuplicateFinder.gui.DuplicateViewModel" 
     xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
-    xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions">
+    xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+    xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles">
     <Grid>
         <Grid Margin="10" IsVisible="{Binding IsGroupHeader}">
             <Border Background="#F0F0F0">

@@ -5,6 +5,7 @@
     xmlns:duplicateFinderEngine="clr-namespace:DuplicateFinderEngine;assembly=DuplicateFinderEngine"
     xmlns:local="clr-namespace:VideoDuplicateFinder.gui"
     xmlns:mvvm="clr-namespace:VideoDuplicateFinder.gui.MVVM.Converters"
+    xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
     Title="{Binding Title}"
     MinWidth="400"
     MaxWidth="600"

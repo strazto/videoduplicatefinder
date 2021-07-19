@@ -40,7 +40,7 @@
                     <Menu
                         Grid.Row="0"
                         MinHeight="30"
-                        Background="#F0F0F0">
+                        Background="{DynamicResource MaterialDesignToolBarBackground}">
                         <MenuItem VerticalAlignment="Center" Command="{Binding StartScanCommand}" IsVisible="{Binding IsScanning, Converter={StaticResource NegateBool}}">
                             <MenuItem.Header>
                                 <StackPanel Orientation="Horizontal">
@@ -107,7 +107,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Viewbox Width="16" Height="16">
                                         <Canvas Width="24" Height="24">
-                                            <Path Data="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" Fill="Black" />
+                                            <Path Data="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" 
+                                                  Fill="{DynamicResource MaterialDesignBody}" />
                                         </Canvas>
                                     </Viewbox>
                                     <TextBlock
@@ -200,7 +201,7 @@
                                 <Menu
                                     Grid.Row="0"
                                     MinHeight="30"
-                                    Background="#F0F0F0">
+                                    Background="{DynamicResource MaterialDesignToolBarBackground}">
                                     <MenuItem Command="{Binding AddIncludesToListCommand}">
                                         <MenuItem.Header>
                                             <StackPanel Orientation="Horizontal">
@@ -261,7 +262,7 @@
                                 <Menu
                                     Grid.Row="0"
                                     MinHeight="30"
-                                    Background="#F0F0F0">
+                                    Background="{DynamicResource MaterialDesignToolBarBackground}">
                                     <MenuItem Command="{Binding AddBlacklistToListCommand}">
                                         <MenuItem.Header>
                                             <StackPanel Orientation="Horizontal">
@@ -311,13 +312,13 @@
                         <Menu
                             Grid.Row="0"
                             MinHeight="30"
-                            Background="#F0F0F0">
+                            Background="{DynamicResource MaterialDesignToolBarBackground}">
                             <MenuItem VerticalAlignment="Center">
                                 <MenuItem.Header>
                                     <StackPanel Orientation="Horizontal">
                                         <Viewbox Width="16" Height="16">
                                             <Canvas Width="24" Height="24">
-                                                <Path Data="M2,4C2,2.89 2.9,2 4,2H7V4H4V7H2V4M22,4V7H20V4H17V2H20A2,2 0 0,1 22,4M20,20V17H22V20C22,21.11 21.1,22 20,22H17V20H20M2,20V17H4V20H7V22H4A2,2 0 0,1 2,20M10,2H14V4H10V2M10,20H14V22H10V20M20,10H22V14H20V10M2,10H4V14H2V10Z" Fill="Black" />
+                                                <Path Data="M2,4C2,2.89 2.9,2 4,2H7V4H4V7H2V4M22,4V7H20V4H17V2H20A2,2 0 0,1 22,4M20,20V17H22V20C22,21.11 21.1,22 20,22H17V20H20M2,20V17H4V20H7V22H4A2,2 0 0,1 2,20M10,2H14V4H10V2M10,20H14V22H10V20M20,10H22V14H20V10M2,10H4V14H2V10Z" Fill="{DynamicResource MaterialDesignBody}" />
                                             </Canvas>
                                         </Viewbox>
                                         <TextBlock
@@ -328,7 +329,7 @@
                                             Margin="4,2,0,0"
                                             VerticalAlignment="Center"
                                             Data="M 0 0 L 6 6 L 12 0 Z"
-                                            Fill="Black" />
+                                            Fill="{DynamicResource MaterialDesignBody}" />
                                     </StackPanel>
                                 </MenuItem.Header>
                                 <MenuItem Command="{Binding CheckWhenIdenticalCommand}">
@@ -368,7 +369,7 @@
                                             Margin="4,2,0,0"
                                             VerticalAlignment="Center"
                                             Data="M 0 0 L 6 6 L 12 0 Z"
-                                            Fill="Black" />
+                                            Fill="{DynamicResource MaterialDesignBody}" />
                                     </StackPanel>
                                 </MenuItem.Header>
                                 <MenuItem Command="{Binding DeleteSelectionCommand}">
@@ -399,7 +400,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Viewbox Width="16" Height="16">
                                             <Canvas Width="24" Height="24">
-                                                <Path Data="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" Fill="Black" />
+                                                <Path Data="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" Fill="{DynamicResource MaterialDesignBody}" />
                                             </Canvas>
                                         </Viewbox>
                                         <TextBlock

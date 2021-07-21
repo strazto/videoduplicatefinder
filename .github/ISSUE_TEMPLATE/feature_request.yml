@@ -34,11 +34,14 @@ body:
       label: videoduplicatefinder version
       description: |
         What is the version number of the release you're using?
-   
+        Please note - if you find yourself picking anything besides the latest release, stop now,
+        update to the latest release, and confirm your issue has been addressed.
+      options:
+        - "2.1.0"
+        - "Something older (Stop now, update to the latest release, & check if it does what you want)"
   - type: textarea
     attributes:
       label: Describe what you'd like
       description: A clear and concise description of what you want to happen.
     validations:
       required: true
-      

@@ -4,11 +4,6 @@ about: Suggest an idea for this project
 title: '[OS.Client]Feature: '
 labels: ''
 assignees: ''
-
-x-required: &required
-  validations:
-    required: true
-
 body:
   - type: dropdown
     attributes:
@@ -20,7 +15,8 @@ body:
         - Linux
         - Other?
   - type: dropdown
-    <<: *required
+    validations:
+      required: true
     
     attributes:      
       label: Client Type
@@ -31,7 +27,8 @@ body:
         - Console
         - Web
   - type: dropdown
-    <<: *required
+    validations:
+      required: true
     
     attributes:
       label: videoduplicatefinder version

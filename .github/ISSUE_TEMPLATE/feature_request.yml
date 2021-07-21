@@ -1,4 +1,4 @@
----
+
 name: Feature request
 about: Suggest an idea for this project
 title: '[OS.Client]Feature: '
@@ -34,12 +34,11 @@ body:
       label: videoduplicatefinder version
       description: |
         What is the version number of the release you're using?
+   
+  - type: textarea
+    attributes:
+      label: Describe what you'd like
+      description: A clear and concise description of what you want to happen.
+    validations:
+      required: true
       
----
-
-**Environment**
- - OS: [e.g. Windows / Linux / Any]
- - Client: [e.g. Windows, Cross-Platform, Console, Web]
- - Version: [The version number of the release you downloaded]
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.

@@ -1,9 +1,9 @@
 
 name: Feature request
-about: Suggest an idea for this project
+description: Suggest an idea for this project
 title: '[OS.Client]Feature: '
-labels: ''
-assignees: ''
+# labels: ''
+# assignees: ''
 body:
   - type: dropdown
     attributes:

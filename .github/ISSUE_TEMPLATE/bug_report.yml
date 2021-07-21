@@ -5,6 +5,19 @@ title: '[OS.Client]Bug: '
 # assignees: ''
 body:
   - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: videoduplicatefinder version
+      description: |
+        What is the version number of the release you're using?
+        Please note - if you find yourself picking anything besides the latest release, stop now,
+        update to the latest release, and confirm your issue has been addressed.
+      options:
+        - "2.1.0"
+        - "Something older (Stop now, update to the latest release, & check if it does what you want)"
+        
+  - type: dropdown
     attributes:
       label: Operating System
       description: What OS are you running?
@@ -25,19 +38,7 @@ body:
         - Cross platform GUI (Versions >= 2.1.0)
         - Console
         - Web
-  - type: dropdown
-    validations:
-      required: true
-    
-    attributes:
-      label: videoduplicatefinder version
-      description: |
-        What is the version number of the release you're using?
-        Please note - if you find yourself picking anything besides the latest release, stop now,
-        update to the latest release, and confirm your issue has been addressed.
-      options:
-        - "2.1.0"
-        - "Something older (Stop now, update to the latest release, & check if it does what you want)"
+
   - type: textarea
     attributes:
       label: Describe the bug

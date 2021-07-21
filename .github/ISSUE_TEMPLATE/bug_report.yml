@@ -1,0 +1,56 @@
+name: Bug Report
+description: Something isn't working
+title: '[OS.Client]Bug: '
+# labels: ''
+# assignees: ''
+body:
+  - type: dropdown
+    attributes:
+      label: Operating System
+      description: What OS are you running?
+      options:
+        - Windows
+        - OSX Mac
+        - Linux
+        - Other?
+  - type: dropdown
+    validations:
+      required: true
+    
+    attributes:      
+      label: Client Type
+      description: Which client are you trying to use?
+      options:
+        - Windows only GUI (Only in versions <2.1.0)
+        - Cross platform GUI (Versions >= 2.1.0)
+        - Console
+        - Web
+  - type: dropdown
+    validations:
+      required: true
+    
+    attributes:
+      label: videoduplicatefinder version
+      description: |
+        What is the version number of the release you're using?
+        Please note - if you find yourself picking anything besides the latest release, stop now,
+        update to the latest release, and confirm your issue has been addressed.
+      options:
+        - "2.1.0"
+        - "Something older (Stop now, update to the latest release, & check if it does what you want)"
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: |
+       Concise description of what happened, eg:
+        - When I click on x tab, y happened
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behaviour
+      description: |
+       Concise + Specific description of what you expected
+        - When I click on x tab, then on y option, z should happen
+    validations:
+      required: true

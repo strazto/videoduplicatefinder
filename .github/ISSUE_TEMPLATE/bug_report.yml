@@ -41,7 +41,13 @@ body:
 
   - type: textarea
     attributes:
-      label: Describe the bug
+      label: |
+       Describe the bug. Be as specific as possible, and if possible, provide clear, specific
+       steps that someone else could undertake in order to reproduce the bug. 
+       See the [StackOverflow Guide To Minimal Reproducible Examples](https://stackoverflow.com/help/minimal-reproducible-example)
+       as a guide. 
+       If possible, you may provide download links to media files / directory structures that you've been able to reproduce the bug to, however,
+       please do not link to any illegal piracy websites, & please do not provide public links to any media you do not have a license to redistribute.
       description: |
        Concise description of what happened, eg:
         - When I click on x tab, y happened
